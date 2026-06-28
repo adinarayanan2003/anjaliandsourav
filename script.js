@@ -1,19 +1,5 @@
-/* ── Parallax Hero ── */
-const heroLeftImg = document.querySelector('.hero-left img');
-const heroRightImg = document.querySelector('.hero-right img');
-const MAX_DRIFT = 200;
-if (heroLeftImg && heroRightImg) {
-  window.addEventListener('scroll', () => {
-    const scroll = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
-    const heroHeight = hero.offsetHeight;
-    const progress = Math.min(1, scroll / heroHeight);
-    const drift = MAX_DRIFT * (1 - progress);
-    heroLeftImg.style.transform = `translate3d(${drift}px,${drift * 0.3}px,0) scale(1.08)`;
-    heroRightImg.style.transform = `translate3d(${-drift}px,${drift * 0.3}px,0) scale(1.08)`;
-  });
-}
+/* ── Hero: static images, no scroll-drift ── */
+/* images stay in place — all movement is CSS floating animation */
 
 /* ── Nav background on scroll ── */
 const nav = document.getElementById('nav');

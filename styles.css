@@ -86,7 +86,6 @@ body{
   object-fit:cover;
   object-position:center;
   will-change:transform;
-  transition:transform 8s ease;
 }
 .hero-left img{object-position:70% 40%}
 .hero-right img{object-position:30% 32%}
@@ -127,6 +126,11 @@ body{
   color:#fff;
   padding:2rem;
   max-width:800px;
+  animation:floatHero 6s ease-in-out infinite;
+}
+@keyframes floatHero{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
 }
 .hero-eyebrow{
   font-size:.75rem;
@@ -135,6 +139,12 @@ body{
   text-transform:uppercase;
   opacity:.85;
   margin-bottom:2rem;
+  animation:floatEyebrow 5s ease-in-out infinite;
+  animation-delay:.5s;
+}
+@keyframes floatEyebrow{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-5px)}
 }
 .hero h1{
   display:flex;flex-wrap:wrap;
@@ -148,13 +158,23 @@ body{
   font-family:var(--script);
   font-size:clamp(4.5rem,14vw,9rem);
   font-weight:400;
+  display:inline-block;
 }
+.hero h1 .hero-name:first-child{animation:floatLeft 7s ease-in-out infinite}
+.hero h1 .hero-name:last-child{animation:floatRight 7s ease-in-out infinite;animation-delay:.8s}
+@keyframes floatLeft{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes floatRight{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 .hero-and{
   font-family:var(--serif);
   font-size:clamp(2rem,6vw,3.5rem);
   font-style:italic;
   color:var(--accent-light);
   opacity:.9;
+  animation:pulseAnd 4s ease-in-out infinite;
+}
+@keyframes pulseAnd{
+  0%,100%{transform:scale(1) rotate(0)}
+  50%{transform:scale(1.1) rotate(3deg)}
 }
 .hero-line{
   font-family:var(--serif);
@@ -163,6 +183,12 @@ body{
   letter-spacing:1px;
   opacity:.9;
   margin-bottom:2.5rem;
+  animation:floatLine 5.5s ease-in-out infinite;
+  animation-delay:1.2s;
+}
+@keyframes floatLine{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-7px)}
 }
 .hero-btn{
   display:inline-block;
@@ -176,6 +202,12 @@ body{
   letter-spacing:2.5px;
   text-transform:uppercase;
   transition:all .3s;
+  animation:pulseBtn 3s ease-in-out infinite;
+  animation-delay:1.8s;
+}
+@keyframes pulseBtn{
+  0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,.3)}
+  50%{box-shadow:0 0 0 10px rgba(255,255,255,0)}
 }
 .hero-btn:hover{
   background:rgba(255,255,255,.15);
