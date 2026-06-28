@@ -39,7 +39,14 @@ html = f'''<!DOCTYPE html>
   <title>Anjali & Sourav · Engagement</title>
   <meta name="description" content="Join us in celebrating the engagement of Anjali and Sourav on 21 June 2026" />
   <meta property="og:title" content="Anjali & Sourav · Engagement" />
-  <meta property="og:description" content="Two hearts, one promise, a lifetime of love." />
+  <meta property="og:description" content="Two hearts, one promise, a lifetime of love. Sunday, 21 June 2026, Calicut." />
+  <meta property="og:image" content="share-card.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Anjali & Sourav · Engagement" />
+  <meta name="twitter:description" content="Two hearts, one promise, a lifetime of love." />
+  <meta name="twitter:image" content="share-card.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
