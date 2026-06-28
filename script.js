@@ -67,12 +67,35 @@ document.querySelectorAll('.img-load').forEach((img) => {
   }
 });
 
-/* ── Ambient Music Toggle ── */
+/* ── Ambient Music ── */
 const musicToggle = document.getElementById('musicToggle');
 const ambient = document.getElementById('ambient');
 let musicPlaying = false;
 
 if (musicToggle && ambient) {
+  // Try autoplay; if blocked, play on first user interaction
+  const tryPlay = () => {
+    ambient.play().then(() => {
+      musicPlaying = true;
+      musicToggle.classList.add('playing');
+    }).catch(() => {
+      // Autoplay blocked — wait for interaction
+      const resume = () => {
+        ambient.play().then(() => {
+          musicPlaying = true;
+          musicToggle.classList.add('playing');
+        }).catch(() => {});
+        document.removeEventListener('click', resume);
+        document.removeEventListener('scroll', resume);
+        document.removeEventListener('touchstart', resume);
+      };
+      document.addEventListener('click', resume, { once: true });
+      document.addEventListener('scroll', resume, { once: true });
+      document.addEventListener('touchstart', resume, { once: true });
+    });
+  };
+  tryPlay();
+
   musicToggle.addEventListener('click', () => {
     if (musicPlaying) {
       ambient.pause();

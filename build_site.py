@@ -172,7 +172,7 @@ html = f'''<!DOCTYPE html>
     <img id="lightbox-img" src="" class="img-load" alt="" />
   </div>
 
-  <audio id="ambient" src="ambient.mp3" loop preload="none"></audio>
+  <audio id="ambient" src="ambient.mp3" loop preload="auto"></audio>
 
   <button class="music-toggle" id="musicToggle" aria-label="Toggle music">
     <svg class="icon-play" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5">
